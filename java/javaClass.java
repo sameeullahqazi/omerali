@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 import java.util.Arrays;
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.HashMap;
 public class javaClass {
 
