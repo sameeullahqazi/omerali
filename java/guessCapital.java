@@ -36,7 +36,7 @@ public class deader {
          return the player name to the main menu */
 		
 		String playerName = input.next();
-   
+		System.out.println("Thank you for adding name");
     	return  playerName;
 
   	}
@@ -99,8 +99,8 @@ public class deader {
 			} else {
 				questionsAsked.put("" + questionNumber, true);
 				System.out.println("What is the capital of " + countries[questionNumber - 1]);
-				String usersAnswer = input.next();
-				String actualAnswer = capitals[questionNumber - 1];
+				String usersAnswer = input.next().toLowerCase();
+				String actualAnswer = capitals[questionNumber - 1].toLowerCase();
 				if(usersAnswer.equals(actualAnswer)) {
 					System.out.println("Correct!: ");
 					questionScore++;
@@ -143,4 +143,4 @@ public class deader {
 		}
 		input.close();
 	}
-}       
+}
