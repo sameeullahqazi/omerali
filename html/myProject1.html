@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<style>
+h1{
+
+}
+#container1{
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#container2 {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#container3 {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+#container4 {
+  display: block;
+  position: relative; 
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+button 
+{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	color: #fff
+	padding: 10px 20px;
+	border: 2px solid #000;
+	cursor: pointer;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o- border-radius: 10px;
+	border-radius: 10px;
+	background: - webkit-linear-gradient(top,#a3a3a3,#000);
+	background: -moz-linear-gradient(top,#a3a3a3,#000);
+	background: -o-linear-gradient(top,#a3a3a3,#000);
+	background: (top,#a3a3a3,#000);
+	
+	-webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+	-o-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+	box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+button:hover
+{
+	background: -webkit-linear-gradient(top, #FF0000, #506651);
+	background: -moz-linear-gradient(top, #FF0000, #506651);
+	background: -omoz-linear-gradient(top, #FF0000, #506651);
+	background: linear-gradient(top, #FF0000, #506651);
+}
+button:active
+{
+	background: -webkit-linear-gradient(top, #858565, #c5c9a9);
+	background: -moz-linear-gradient(top, #858565, #c5c9a9);
+	background: -o-linear-gradient(top, #858565, #c5c9a9);
+	background: linear-gradient(top, #858565, #c5c9a9);
+}	
+
+
+</style>
+
+<head>
+	<html lang = "en">
+	<meta charset="utf-8">
+	<title>Random Password generator</title>
+	
+	
+</head>
+<body>	
+
+
+	<h1> Welcome to the password generator!! </h1>
+	<label id ="container1">Small Case letters
+	<input type="checkbox" id="chkLowercase">
+	</label>
+	
+	<label id="container2">Large case letters
+	<input type="checkbox" id="chkUppercase">
+	</label>
+	
+	<label id="container3">Symbols
+	<input type="checkbox" id="chkSymbols">
+	</label>
+	
+	<label id="container4">Digits
+	<input type="checkbox" id="chkDigits">
+	</label>
+<p id="output"> It is advisable to add a length between 16 and 22 for the password.</p>
+<input id="input" type="text" placeholder="Enter the length...">	
+<button> Confirm </button>
+<script type="text/javascript">
+
+var input = document.querySelector("#input");
+var output = document.querySelector("#output");
+
+
+
+var button = document.querySelector("button");
+button.addEventListener("click", clickHandler, false);
+button.style.cursor = "pointer";
+
+window.addEventListener("keydown", keydownHandler, false);
+function keydownHandler(event)
+{
+	if(event.keyCode === 13)
+	{
+		validateInput();
+	}
+}
+
+function clickHandler()
+{
+ validateInput();
+}
+
+function validateInput()
+{
+	playerInput = parseInt(input.value)
+	if (isNaN(playerInput)){
+		output.innerHTML = "Please enter a number";
+	}
+	else{
+		validateInput2();
+	}
+}	
+
+function validateInput2()
+{
+	
+	var check1 = document.getElementById("chkLowercase").checked;
+	var check2 = document.getElementById("chkUppercase").checked;
+	console.log("check1: ", check1, ", check2: ", check2);
+	
+	if (check1 === false && check2 === false){
+		output.innerHTML = "You have to select at least one type of letter format";
+	}
+	else{
+		generatePassword();
+	}
+}
+
+function generatePassword()
+{
+	var password = "the password is ....";
+	output.innerHTML = password;
+}
+</script>	
